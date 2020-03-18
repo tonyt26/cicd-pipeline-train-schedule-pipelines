@@ -13,8 +13,7 @@
                 branch 'master'
             }
             steps {
-                withCredentials([usernamePassword(credentialsId: 'staging_server_login', usernameVariable: 'USERNAME', passwordVariable: 'USERPASS')]) {
-                 sh 'whoami'   
+                withCredentials([usernamePassword(credentialsId: 'staging_server_login', usernameVariable: 'USERNAME', passwordVariable: 'USERPASS')]) { 
                  sshPublisher(
                         failOnError: true,
                         continueOnError: false,

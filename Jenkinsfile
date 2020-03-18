@@ -38,7 +38,6 @@
                 }
             }
         }
-     /*
         stage('DeployToProduction') {
             when {
                 branch 'master'
@@ -70,6 +69,6 @@
                     )
                 }
             }
-        }*/
+        }
     }
 }

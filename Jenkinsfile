@@ -14,7 +14,8 @@
             }
             steps {
                 withCredentials([usernamePassword(credentialsId: 'staging_server_login', usernameVariable: 'USERNAME', passwordVariable: 'USERPASS')]) {
-                    sshPublisher(
+                 sh 'whoami'   
+                 sshPublisher(
                         failOnError: true,
                         continueOnError: false,
                         publishers: [
@@ -38,6 +39,7 @@
                 }
             }
         }
+     /*
         stage('DeployToProduction') {
             when {
                 branch 'master'
@@ -69,6 +71,6 @@
                     )
                 }
             }
-        }
+        }*/
     }
 }
